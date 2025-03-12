@@ -1,9 +1,9 @@
-const ReviewCard = () => {
+const ReviewCard = (props) => {
     return (
         <div>
-            <p>voto dell'utente</p>
-            <p>nome dell'utente</p>
-            <p>recensione</p>
+            <p>voto:{props.reviewProp.vote}</p>
+            <p>nome:{props.reviewProp.name}</p>
+            <p>{props.reviewProp.text}</p>
         </div>
     )
 }

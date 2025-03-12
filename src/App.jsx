@@ -1,6 +1,6 @@
 // Importiamo le pagine 
 import HomePage from "./pages/HomePage"
-import MoviesPage from "./pages/MoviesPage"
+import MoviePage from "./pages/MoviePage"
 // Importiamo il layout
 import DefaultLayout from "./layouts/DefaultLayout"
 // Importiamo la gestione delle rotte dal modulo react-router
@@ -19,7 +19,7 @@ function App() {
       <Routes>
         <Route element={<DefaultLayout />}>
           <Route index path="/" element={<HomePage />} />
-          <Route path="/movies/:id" element={<MoviesPage />} />
+          <Route path="/movies/:id" element={<MoviePage />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom"
 
 
-const MovieCard = () => {
+const MovieCard = (props) => {
+
+
     return (
         <div>
-            <img src="http://localhost:3000/img/movies/inception.jpg" alt="img" />
-            <h5>titolo movie</h5>
-            <p>nome autore</p>
-            <Link to="movies/1">detail</Link>
+            <img src={props.movieProp.image} alt="img" />
+            <h5>{props.movieProp.title}</h5>
+            <p>{props.movieProp.director}</p>
+            <Link to={`movies/${props.movieProp.id}`}>detail</Link>
         </div>
     )
 }
