@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom"
 import ReviewCard from "../components/ReviewCard"
 
-const MoviesPage = () => {
+
+const MoviePage = () => {
+
+
     return (
         <>
             <div>
@@ -25,4 +28,4 @@ const MoviesPage = () => {
     )
 }
 
-export default MoviesPage
+export default MoviePage
