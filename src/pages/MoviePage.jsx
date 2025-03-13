@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
-import { Link, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import ReviewCard from "../components/ReviewCard"
 
 
@@ -9,6 +9,10 @@ const MoviePage = () => {
     // recupero l'id del movie richiesto
     const { id } = useParams();
 
+    // utilizzo per il redirect 
+    const redirect = useNavigate();
+
+    // settiamo lo stato del componente
     const [movie, setMovie] = useState({});
 
     // chiamata api per il movie
@@ -20,7 +24,11 @@ const MoviePage = () => {
                     setMovie(res.data)
                 }
             )
-            .catch(err => console.log(err)
+            .catch(err => {
+                console.log(err);
+                if (err.status === 404) redirect("/404")
+            }
+
             )
     }
 

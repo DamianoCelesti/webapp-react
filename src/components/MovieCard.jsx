@@ -6,9 +6,9 @@ const MovieCard = (props) => {
 
     return (
         <div>
-            <img src={props.movieProp.image} alt="img" />
+            {props.movieProp.image && <img src={props.movieProp.image} alt="img" />}
             <h5>{props.movieProp.title}</h5>
-            <p>{props.movieProp.director}</p>
+            <p>{props.movieProp.director || "Anonymous"}</p>
             <Link to={`movies/${props.movieProp.id}`}>detail</Link>
         </div>
     )
