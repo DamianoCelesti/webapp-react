@@ -2,7 +2,7 @@ import { useState } from "react"
 import axios from "axios";
 
 
-const ReviewForm = (movieId) => {
+const ReviewForm = (movieId, reloadReviews) => {
 
 
     const initialValue = { name: "", text: "", vote: 1 };
@@ -20,7 +20,12 @@ const ReviewForm = (movieId) => {
     const submitReview = (e) => {
         e.PreventDefault();
         axios.post(urlEndpoint, formData)
-            .then(setFormData(initialValue))
+            .then(
+                () => {
+                    setFormData(initialValue)
+                    reloadReviews()
+                }
+            )
             .catch(err => console.log(err)
             )
     }

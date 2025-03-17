@@ -59,7 +59,7 @@ const MoviePage = () => {
                 {renderReviews()}
             </section>
             <section>
-                <ReviewForm movieId={movie.id} />
+                <ReviewForm movieId={movie.id} reloadReviews={fetchMovie} />
             </section>
             <div>
                 <Link to="/">Back to home</Link>
