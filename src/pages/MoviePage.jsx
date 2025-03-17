@@ -2,6 +2,7 @@ import axios from "axios"
 import { useState, useEffect } from "react"
 import { Link, useNavigate, useParams } from "react-router-dom"
 import ReviewCard from "../components/ReviewCard"
+import ReviewForm from "../components/ReviewForm"
 
 
 const MoviePage = () => {
@@ -57,7 +58,9 @@ const MoviePage = () => {
                 </div>
                 {renderReviews()}
             </section>
-
+            <section>
+                <ReviewForm movieId={movie.id} />
+            </section>
             <div>
                 <Link to="/">Back to home</Link>
             </div>
