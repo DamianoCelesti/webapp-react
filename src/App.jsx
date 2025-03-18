@@ -2,10 +2,12 @@
 import HomePage from "./pages/HomePage"
 import MoviePage from "./pages/MoviePage"
 import NotFoundPage from "./pages/NotFoundPage"
+import CreateMoviePage from "./pages/CreateMovie"
 // Importiamo il layout
 import DefaultLayout from "./layouts/DefaultLayout"
 // Importiamo la gestione delle rotte dal modulo react-router
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+
 
 
 
@@ -20,6 +22,7 @@ function App() {
       <Routes>
         <Route element={<DefaultLayout />}>
           <Route index path="/" element={<HomePage />} />
+          <Route path="/movies/create" element={<CreateMoviePage />} />
           <Route path="/movies/:id" element={<MoviePage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
